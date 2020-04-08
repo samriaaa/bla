@@ -26,7 +26,7 @@ client.on('message', async message => {
 	if (message.author.bot) return;		//Wenn der Autor der message ein Bot ist Funktion verlassen
 	if (!message.content.startsWith(prefix)) return;	//Wenn die message nicht mit dem prefix anfängt Funktion verlasse
 
-	if (message.content.toLowerCase().startsWith(`${prefix}help`)) {
+	if (message.content.toLowerCase().startsWith(`сука блять: ${prefix}help`)) {
 		help(message);
 		return;
 	} else if (message.content.toLowerCase().startsWith(`${prefix}ping`)) {
