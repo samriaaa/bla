@@ -67,5 +67,23 @@ function help(message) {
 	}
 }
 
+function purge(message) {
+	const args = message.content.split(" ");
+	const amount = args[1];
+	if (!amount) return message.channel.send(`Usage: ${prefix}purge <amount>`);
+
+	message.channel.fetchMessages({limit: amount})
+
+	.then(messages => {
+		messages.map(msg => {
+	        if (msg.deletable) {
+	            msg.delete();
+			}
+		})
+	})
+
+	message.channel.send(`Embed Links sind nicht erlaubt`)
+}
+
 
 client.login(token);
