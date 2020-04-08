@@ -76,9 +76,7 @@ function purge(message) {
 
 	.then(messages => {
 		messages.map(msg => {
-	        if (msg.deletable) {
-	            msg.delete();
-			}
+	    	msg.delete();
 		})
 	})
 
