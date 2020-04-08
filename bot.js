@@ -87,7 +87,11 @@ function purge(message) {
 			})
 		})
 
-	message.channel.send(`Embed Links sind nicht erlaubt`)
+	if (amount == 1) {
+		message.channel.send(`1 message have been deleted!`)
+	} else {
+		message.channel.send(`${amount} messages have been deleted!`)
+	}
 }
 
 
