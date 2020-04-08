@@ -22,9 +22,9 @@ client.once('disconnect', () => {
 });
 
 
-client.on("presenceUpdate", function(oldPresence, newPresence){
-	const channel = newPresence.guild.channels.cache.find(ch => ch.name === 'allgemein');
-	channel.send(`<@${newPresence.userID}>'s presence changed`);
+client.on('presenceUpdate', function (oldMember, newMember) {
+	const channel = newMember.guild.channels.cache.find(ch => ch.name === 'allgemein');
+	channel.send(`<@${newMember.userID}>'s presence changed`);
 });
 
 client.on('message', async message => {
