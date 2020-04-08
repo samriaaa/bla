@@ -50,6 +50,7 @@ function help(message) {
 					{ name: '\u200B', value: '\u200B' },
 					{ name: `${prefix}help`, value: 'List all commands' },
 					{ name: `${prefix}ping`, value: 'Returns bot`s latency' },
+					{ name: `${prefix}purge <amount>`, value: 'Deletes x messages' },
 				)
 				.setTimestamp()
 				.setFooter(message.author.username, message.author.displayAvatarURL);
