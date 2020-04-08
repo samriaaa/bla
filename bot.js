@@ -8,7 +8,7 @@ const ownerId = process.env.ownerId;
 
 
 client.once('ready', () => {
-	client.user.setActivity(`${prefix}help`);
+	client.user.setActivity(`сука блять : ${prefix}help`);
 
 	console.log('Ready!');
 });
@@ -26,7 +26,7 @@ client.on('message', async message => {
 	if (message.author.bot) return;		//Wenn der Autor der message ein Bot ist Funktion verlassen
 	if (!message.content.startsWith(prefix)) return;	//Wenn die message nicht mit dem prefix anfängt Funktion verlasse
 
-	if (message.content.toLowerCase().startsWith(`сука блять: ${prefix}help`)) {
+	if (message.content.toLowerCase().startsWith(`${prefix}help`)) {
 		help(message);
 		return;
 	} else if (message.content.toLowerCase().startsWith(`${prefix}ping`)) {
