@@ -23,7 +23,8 @@ client.once('disconnect', () => {
 
 
 client.on("presenceUpdate", function(oldMember, newMember){
-    console.log(`a guild member's presence changes`);
+    console.log(oldMember);
+	console.log(newMember);
 });
 
 client.on('message', async message => {
