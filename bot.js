@@ -29,6 +29,10 @@ client.on('message', async message => {
 	if (message.content.toLowerCase().startsWith(`${prefix}help`)) {
 		message.channel.send(`Help:`)
 		return;
+	} else if (message.content.toLowerCase().startsWith(`${prefix}ping`)) {
+		const m = await message.channel.send(`Pong!`);
+		m.edit(`Pong! My latency is ${m.createdTimestamp - message.createdTimestamp}ms!`);
+		return;
 	} else {
 		message.channel.send(`You need to enter a valid command!`)
 	}
