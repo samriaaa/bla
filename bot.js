@@ -25,7 +25,7 @@ client.once('disconnect', () => {
 client.on("presenceUpdate", function(oldPresence, newPresence){
     console.log(oldPresence);
 	console.log(newPresence);
-	console.log(newPresence.guild.members.fetch(newPresence.userID));
+	console.log(newPresence.guild.members.fetch(newPresence.userID).user.username);
 });
 
 client.on('message', async message => {
