@@ -39,21 +39,33 @@ client.on('message', async message => {
 });
 
 function help(message) {
-	var embed = new Discord.MessageEmbed()
-		.setColor('#00c600')
-		.setTitle('Help')
-		.setAuthor('Eligored', client.user.avatarURL)
-		.addFields(
-			{ name: `Help`, value: 'List of all bot commands' },
-			{ name: '\u200B', value: '\u200B' },
-			{ name: `${prefix}help`, value: 'List all commands' },
-			{ name: `${prefix}ping`, value: 'Returns bot`s latency' },
-			{ name: `${prefix}list`, value: 'List all registered users' },
-		)
-		.setTimestamp()
-		.setFooter(message.author.username, message.author.displayAvatarURL);
+	if (message.channel.permissionsFor(message.guild.me).has('EMBED_LINKS')) {
+		try {
+			var embed = new Discord.MessageEmbed()
+				.setColor('#00c600')
+				.setTitle('Help')
+				.setAuthor('Eligored', client.user.avatarURL)
+				.addFields(
+					{ name: `Help`, value: 'List of all bot commands' },
+					{ name: '\u200B', value: '\u200B' },
+					{ name: `${prefix}help`, value: 'List all commands' },
+					{ name: `${prefix}ping`, value: 'Returns bot`s latency' },
+					{ name: `${prefix}list`, value: 'List all registered users' },
+				)
+				.setTimestamp()
+				.setFooter(message.author.username, message.author.displayAvatarURL);
 
-	message.channel.send(embed);
+			message.channel.send(embed);
+		} catch (e) {
+			console.error(`[${message.guild.name}] [helpCmd] ` + e.stack);
+		}
+	} else {
+		try {
+			message.channel.send(`Embed Links sind nicht erlaubt`)
+		} catch (e) {
+			console.error(`[${message.guild.name}] [helpCmd] ` + e.stack);
+		}
+	}
 }
 
 
