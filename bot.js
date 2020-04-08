@@ -25,6 +25,8 @@ client.on('presenceUpdate', function (oldMember, newMember) {
 	if (oldMember.status != 'online') return;
 	const channel = newMember.guild.channels.cache.find(ch => ch.name === 'allgemein');
 
+	console.log("Bla");
+
 	if (newMember.status == 'online') {
 		channel.send(`<@${newMember.userID}> is now ${newMember.status}!`);
 	} else if (newMember.status == 'offline') {
