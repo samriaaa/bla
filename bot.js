@@ -22,6 +22,10 @@ client.once('disconnect', () => {
 });
 
 
+client.on("presenceUpdate", function(oldMember, newMember){
+    console.log(`a guild member's presence changes`);
+});
+
 client.on('message', async message => {
 	if (message.author.bot) return;		//Wenn der Autor der message ein Bot ist Funktion verlassen
 	if (!message.content.startsWith(prefix)) return;	//Wenn die message nicht mit dem prefix anfängt Funktion verlasse
