@@ -63,7 +63,7 @@ function help(message) {
 		}
 	} else {
 		try {
-			message.channel.send(`Embed Links sind nicht erlaubt`)
+			message.channel.send(`Embed links are not allowed in this channel!`)
 		} catch (e) {
 			console.error(`[${message.guild.name}] [helpCmd] ` + e.stack);
 		}
