@@ -73,7 +73,6 @@ function purge(message) {
 	if (!amount) return message.channel.send(`Usage: ${prefix}purge <amount>`);
 
 	message.channel.fetchMessages({limit: amount})
-
 	.then(messages => {
 		messages.map(msg => {
 	    	msg.delete();
