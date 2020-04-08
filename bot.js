@@ -77,8 +77,14 @@ async function ping (message) {
 
 function purge(message) {
 	const args = message.content.split(" ");
-	const amount = args[1];
+	var amount = args[1];
 	if (!amount) return message.channel.send(`Usage: ${prefix}purge <amount>`);
+	try {
+		const amount = parseInt(amount);
+	} catch(e) {
+		return message.channel.send(`Amount must be a number`);
+	}
+
 
 	message.channel.messages.fetch({limit: amount})
 		.then(messages => {
