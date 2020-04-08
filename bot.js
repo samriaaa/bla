@@ -81,11 +81,11 @@ function purge(message) {
 	if (!amount) return message.channel.send(`Usage: ${prefix}purge <amount>`);
 
 	message.channel.messages.fetch({limit: amount})
-	.then(messages => {
-		messages.map(msg => {
-	    	msg.delete();
+		.then(messages => {
+			messages.map(msg => {
+		    	msg.delete();
+			})
 		})
-	})
 
 	message.channel.send(`Embed Links sind nicht erlaubt`)
 }
