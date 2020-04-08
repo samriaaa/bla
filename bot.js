@@ -28,7 +28,6 @@ client.on("presenceUpdate", function(oldPresence, newPresence){
 });
 
 client.on('message', async message => {
-	console.log(message.author);
 	if (message.author.bot) return;		//Wenn der Autor der message ein Bot ist Funktion verlassen
 	if (!message.content.startsWith(prefix)) return;	//Wenn die message nicht mit dem prefix anfängt Funktion verlasse
 
