@@ -34,8 +34,8 @@ client.on('message', async message => {
 		answerMessage.edit(`Pong! My latency is ${answerMessage.createdTimestamp - message.createdTimestamp}ms!`);
 		return;
 	} else if (message.content.toLowerCase().startsWith(`${prefix}purge`)) {
-			purge(message);
-			return;
+		purge(message);
+		return;
 	} else {
 		message.channel.send(`You need to enter a valid command!`)
 	}
