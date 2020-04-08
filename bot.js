@@ -26,8 +26,8 @@ client.on('presenceUpdate', function (oldMember, newMember) {
 });
 
 client.on('message', async message => {
-	if (message.author.bot) return;		//Wenn der Autor der message ein Bot ist Funktion verlassen
-	if (!message.content.startsWith(prefix)) return;	//Wenn die message nicht mit dem prefix anfängt Funktion verlasse
+	if (message.author.bot) return;		//Wenn der Autor der Message ein Bot ist, Funktion verlassen
+	if (!message.content.startsWith(prefix)) return;	//Wenn die Message nicht mit dem Prefix anfängt, Funktion verlasse
 
 	if (message.content.toLowerCase().startsWith(`${prefix}help`)) {
 		help(message);
