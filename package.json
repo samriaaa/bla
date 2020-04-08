@@ -1,14 +1,9 @@
 {
   "name": "workshop-bot-favo",
   "version": "1.0.0",
-  "description": "",
   "main": "bot.js",
-  "dependencies": {
-    "discord.js": "^12.1.1"
-  },
-  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node bot.js"
   },
   "repository": {
     "type": "git",
@@ -20,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/FavoHD/workshop-bot-favo/issues"
   },
-  "homepage": "https://github.com/FavoHD/workshop-bot-favo#readme"
+  "homepage": "https://github.com/FavoHD/workshop-bot-favo#readme",
+  "dependencies": {
+    "discord.js": "^12.1.1"
+  },
+  "devDependencies": {},
+  "description": ""
 }
