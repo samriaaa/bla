@@ -26,7 +26,7 @@ client.on("presenceUpdate", function(oldPresence, newPresence){
     console.log(oldPresence);
 	console.log(newPresence);
 	const member = newPresence.guild.members.fetch(newPresence.userID);
-	console.log(member);
+	console.log(member.username);
 });
 
 client.on('message', async message => {
