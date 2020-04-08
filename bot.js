@@ -8,7 +8,7 @@ const ownerId = process.env.ownerId;
 
 
 client.once('ready', () => {
-	client.user.setActivity(`сука блять : ${prefix}help`);
+	client.user.setActivity(`сука блять  ${prefix}help`);
 
 	console.log('Ready!');
 });
