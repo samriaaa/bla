@@ -23,8 +23,8 @@ client.once('disconnect', () => {
 
 
 client.on('message', async message => {
-	if (message.author.bot) return;
-	if (!message.content.startsWith(prefix)) return;
+	if (message.author.bot) return;		//Wenn der Autor der message ein Bot ist Funktion verlassen
+	if (!message.content.startsWith(prefix)) return;	//Wenn die message nicht mit dem prefix anfängt Funktion verlasse
 
 	if (message.content.toLowerCase().startsWith(`${prefix}help`)) {
 		help(message);
