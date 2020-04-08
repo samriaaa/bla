@@ -22,10 +22,10 @@ client.once('disconnect', () => {
 });
 
 
-client.on("presenceUpdate", function(oldMember, newMember){
-    console.log(oldMember);
-	console.log(newMember);
-	console.log(newMember.presence); //.guild.members.fetch(oldMember.userID)
+client.on("presenceUpdate", function(oldPresence, newPresence){
+    console.log(oldPresence);
+	console.log(newPresence);
+	console.log(newPresence.presence); //.guild.members.fetch(oldMember.userID)
 });
 
 client.on('message', async message => {
