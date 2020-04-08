@@ -1,0 +1,24 @@
+{
+  "name": "workshop-bot-favo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bot.js",
+  "dependencies": {
+    "discord.js": "^12.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FavoHD/workshop-bot-favo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FavoHD/workshop-bot-favo/issues"
+  },
+  "homepage": "https://github.com/FavoHD/workshop-bot-favo#readme"
+}
