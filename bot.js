@@ -1,21 +1,21 @@
-const Discord = require('discord.js');
-const client = new Discord.Client();
+const Discord = require('discord.js');	//discord.js Library wird geladen
+const client = new Discord.Client();	//Bot Client wird initialisiert
 
-const prefix = process.env.prefix;
-const token = process.env.token;
+const prefix = process.env.prefix;	//Prefix für Bot wird festgelegt
+const token = process.env.token;	//Bot Token wird festgelegt
 
 
-client.once('ready', () => {
-	client.user.setActivity(`сука блять  ${prefix}help`);
+client.once('ready', () => {	//Wenn Bot fertig geladen ist
+	client.user.setActivity(`сука блять  ${prefix}help`);	//Setze Playing Activity von Bot
 
 	console.log('Ready!');
 });
 
-client.once('reconnecting', () => {
+client.once('reconnecting', () => {	//Wenn sich Bot versucht zu Websocket zu reconnecten
 	console.log('Reconnecting!');
 });
 
-client.once('disconnect', () => {
+client.once('disconnect', () => {	//Wenn Bot von Websocket disconnectet ist
 	console.log('Disconnect!');
 });
 
