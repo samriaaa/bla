@@ -27,7 +27,7 @@ client.on('message', async message => {
 	if (!message.content.startsWith(prefix)) return;
 
 	if (message.content.toLowerCase().startsWith(`${prefix}help`)) {
-		message.channel.send(`Help:`)
+		help(message);
 		return;
 	} else if (message.content.toLowerCase().startsWith(`${prefix}ping`)) {
 		const m = await message.channel.send(`Pong!`);
@@ -38,6 +38,23 @@ client.on('message', async message => {
 	}
 });
 
+function help(message) {
+	var embed = new Discord.MessageEmbed()
+		.setColor('#00c600')
+		.setTitle('Help')
+		.setAuthor('Eligored', client.user.avatarURL)
+		.addFields(
+			{ name: `Help`, value: 'List of all bot commands' },
+			{ name: '\u200B', value: '\u200B' },
+			{ name: `${prefix}help`, value: 'List all commands' },
+			{ name: `${prefix}ping`, value: 'Returns bot`s latency' },
+			{ name: `${prefix}list`, value: 'List all registered users' },
+		)
+		.setTimestamp()
+		.setFooter(message.author.username, message.author.displayAvatarURL);
+
+	message.channel.send(embed);
+}
 
 
 client.login(token);
