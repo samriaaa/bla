@@ -8,7 +8,7 @@ const ownerId = process.env.ownerId;
 
 
 client.once('ready', () => {
-	client.user.setActivity(`${prefix}help`, {url: 'https://www.twitch.tv/relaxbeats'});
+	client.user.setActivity(`${prefix}help`);
 
 	console.log('Ready!');
 });
