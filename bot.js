@@ -22,7 +22,12 @@ client.once('disconnect', () => {	//Wenn Bot von Websocket disconnectet ist
 
 client.on('presenceUpdate', function (oldMember, newMember) {
 	const channel = newMember.guild.channels.cache.find(ch => ch.name === 'allgemein');
-	channel.send(`<@${newMember.userID}>'s status changed to ${newMember.status}!`);
+
+	if (newMember.status == "online") {
+		channel.send(`<@${newMember.userID}>'s is now ${newMember.status}!`);
+	} else if (newMember.status == "offline") {
+		channel.send(`<@${newMember.userID}> is now ${newMember.status}!`);
+	}
 });
 
 client.on('message', async message => {
