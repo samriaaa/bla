@@ -8,7 +8,7 @@ const ownerId = process.env.ownerId;
 
 
 client.once('ready', () => {
-	client.user.setActivity(`${prefix}help`);
+	client.user.setActivity(`${prefix}help`, {url: 'https://github.com/FavoHD/workshop-bot-favo'});
 
 	console.log('Ready!');
 });
