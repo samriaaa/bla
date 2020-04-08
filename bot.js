@@ -3,8 +3,6 @@ const client = new Discord.Client();
 
 const prefix = process.env.prefix;
 const token = process.env.token;
-const ownerId = process.env.ownerId;
-
 
 
 client.once('ready', () => {
