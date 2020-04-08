@@ -45,31 +45,23 @@ client.on('message', async message => {
 
 function help(message) {
 	if (message.channel.permissionsFor(message.guild.me).has('EMBED_LINKS')) {
-		try {
-			var embed = new Discord.MessageEmbed()
-				.setColor('#00c600')
-				.setTitle('Help')
-				.setAuthor('Workshop bot', client.user.avatarURL)
-				.addFields(
-					{ name: `Help`, value: 'List of all bot commands' },
-					{ name: '\u200B', value: '\u200B' },
-					{ name: `${prefix}help`, value: 'List all commands' },
-					{ name: `${prefix}ping`, value: 'Returns bot`s latency' },
-					{ name: `${prefix}purge <amount>`, value: 'Deletes x messages' },
-				)
-				.setTimestamp()
-				.setFooter(message.author.username, message.author.displayAvatarURL);
+		var embed = new Discord.MessageEmbed()
+			.setColor('#00c600')
+			.setTitle('Help')
+			.setAuthor('Workshop bot', client.user.avatarURL)
+			.addFields(
+				{ name: `Help`, value: 'List of all bot commands' },
+				{ name: '\u200B', value: '\u200B' },
+				{ name: `${prefix}help`, value: 'List all commands' },
+				{ name: `${prefix}ping`, value: 'Returns bot`s latency' },
+				{ name: `${prefix}purge <amount>`, value: 'Deletes x messages' },
+			)
+			.setTimestamp()
+			.setFooter(message.author.username, message.author.displayAvatarURL);
 
-			message.channel.send(embed);
-		} catch (e) {
-			console.error(`[${message.guild.name}] [helpCmd] ` + e.stack);
-		}
+		message.channel.send(embed);
 	} else {
-		try {
-			message.channel.send(`Embed links are not allowed in this channel!`)
-		} catch (e) {
-			console.error(`[${message.guild.name}] [helpCmd] ` + e.stack);
-		}
+		message.channel.send(`Embed links are not allowed in this channel!`)
 	}
 }
 
