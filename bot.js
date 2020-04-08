@@ -82,9 +82,8 @@ function purge(message) {
 	try {
 		const amount = parseInt(amount);
 	} catch(e) {
-		return message.channel.send(`Amount must be a number`);
+		return message.channel.send(`Amount has to be a number!`);
 	}
-
 
 	message.channel.messages.fetch({limit: amount})
 		.then(messages => {
