@@ -44,13 +44,12 @@ function help(message) {
 			var embed = new Discord.MessageEmbed()
 				.setColor('#00c600')
 				.setTitle('Help')
-				.setAuthor('Eligored', client.user.avatarURL)
+				.setAuthor('Workshop bot', client.user.avatarURL)
 				.addFields(
 					{ name: `Help`, value: 'List of all bot commands' },
 					{ name: '\u200B', value: '\u200B' },
 					{ name: `${prefix}help`, value: 'List all commands' },
 					{ name: `${prefix}ping`, value: 'Returns bot`s latency' },
-					{ name: `${prefix}list`, value: 'List all registered users' },
 				)
 				.setTimestamp()
 				.setFooter(message.author.username, message.author.displayAvatarURL);
