@@ -30,8 +30,7 @@ client.on('message', async message => {
 		help(message);
 		return;
 	} else if (message.content.toLowerCase().startsWith(`${prefix}ping`)) {
-		const answerMessage = await message.channel.send(`Pong!`);
-		answerMessage.edit(`Pong! My latency is ${answerMessage.createdTimestamp - message.createdTimestamp}ms!`);
+		ping(message);
 		return;
 	} else if (message.content.toLowerCase().startsWith(`${prefix}purge`)) {
 		purge(message);
@@ -69,6 +68,11 @@ function help(message) {
 			console.error(`[${message.guild.name}] [helpCmd] ` + e.stack);
 		}
 	}
+}
+
+async function ping (message) {
+	const answerMessage = await message.channel.send(`Pong!`);
+	answerMessage.edit(`Pong! My latency is ${answerMessage.createdTimestamp - message.createdTimestamp}ms!`);
 }
 
 function purge(message) {
