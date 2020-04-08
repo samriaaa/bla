@@ -8,7 +8,7 @@ const ownerId = process.env.ownerId;
 
 
 client.once('ready', () => {
-	client.user.setActivity(`${prefix}help`, {url: 'https://github.com/FavoHD/workshop-bot-favo'});
+	client.user.setActivity(`${prefix}help`, {url: 'https://www.twitch.tv/relaxbeats'});
 
 	console.log('Ready!');
 });
