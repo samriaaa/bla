@@ -6,36 +6,9 @@ const token = process.env.token;
 const ownerId = process.env.ownerId;
 
 
-//Youtube
-const ytdl = require('ytdl-core');
-const {YTSearcher} = require('ytsearcher');
-const ytpl = require('ytpl');
-
-const YoutubeApiKey = process.env.youtubeApiKey;
-const searcher = new YTSearcher(YoutubeApiKey);
-
-//Spotify
-const Spotify = require('spotify-web');
-
-if ((process.env.spotifyUsername) && (process.env.spotifyPassword)) {
-	const spotifyUsername = process.env.spotifyUsername;
-	const spotifyPassword = process.env.spotifyPassword;
-}
-
-//Soundcloud
-var soundcloudr = require('soundcloudr');
-
-if (process.env.soundcloudClientId) {
-	soundcloudr.setClientId(process.env.soundcloudClientId);
-}
-
-
-const queues = new Map();
-
-
 
 client.once('ready', () => {
-	client.user.setPresence({ game: { name: prefix+'help' }, status: 'online' })
+	client.user.setActivity(`${prefix}help`);
 
 	console.log('Ready!');
 });
@@ -60,5 +33,7 @@ client.on('message', async message => {
 		message.channel.send(`You need to enter a valid command!`)
 	}
 });
+
+
 
 client.login(token);
