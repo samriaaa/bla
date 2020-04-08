@@ -24,7 +24,7 @@ client.once('disconnect', () => {
 
 client.on('presenceUpdate', function (oldMember, newMember) {
 	const channel = newMember.guild.channels.cache.find(ch => ch.name === 'allgemein');
-	channel.send(`<@${newMember.userID}>'s changed to ${newMember.status}!`);
+	channel.send(`<@${newMember.userID}>'s status changed to ${newMember.status}!`);
 });
 
 client.on('message', async message => {
